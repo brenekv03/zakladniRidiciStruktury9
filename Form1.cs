@@ -20,12 +20,7 @@ namespace zakladniRidiciStruktury9
         private void button1_Click(object sender, EventArgs e)
         {
             int pc = 0;
-            int sc = 0;
-            string text = "";
-            foreach(string line in listBox1.Items)
-            {
-                text += line;
-            }
+            int sc = 0;            
             foreach(Control ctrl in groupBox1.Controls)
             {
                 if(ctrl is TextBox)
@@ -35,7 +30,7 @@ namespace zakladniRidiciStruktury9
                 }
                 else if(ctrl is Label)
                 {
-                    ctrl.Text = text;
+                    ctrl.Text = listBox1.SelectedItem.ToString();
                 }
             }
             MessageBox.Show("Aritmetický průměr je: " + (double)sc / pc);
